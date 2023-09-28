@@ -12,6 +12,7 @@ import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 })
 export class SearchPageComponent {
 
+    // input reactivo
     public searchInput = new FormControl('');
     public heroes: Hero[] = [];
     public selectedHero?: Hero;
@@ -20,6 +21,7 @@ export class SearchPageComponent {
     constructor(private heroesService: HeroesService) { }
 
     searchHero() {
+
         const value: string = this.searchInput.value || '';
 
         this.heroesService.getSuggestions(value)
